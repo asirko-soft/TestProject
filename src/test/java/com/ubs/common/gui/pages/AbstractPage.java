@@ -2,9 +2,9 @@ package com.ubs.common.gui.pages;
 
 import org.openqa.selenium.WebDriver;
 
-public class AbstractPage {
+class AbstractPage {
 
-    public WebDriver driver;
+    WebDriver driver;
 
     AbstractPage(WebDriver webDriver) {
         driver = webDriver;

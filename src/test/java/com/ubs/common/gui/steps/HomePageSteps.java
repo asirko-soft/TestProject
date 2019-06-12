@@ -10,11 +10,10 @@ import org.openqa.selenium.interactions.Actions;
 
 public class HomePageSteps {
 
+    private final String EXPECTED_COOKIE_SETTING = "0-1-2-3";
     private WebDriver driver = DriverProvider.getDriver();
     private HomePage homePage = new HomePage(driver);
-    Actions actions = new Actions(driver);
-
-    final String EXPECTED_COOKIE_SETTING = "0-1-2-3";
+    private Actions actions = new Actions(driver);
 
     @When("User goes to Home Page")
     public void goToHomePage() {
