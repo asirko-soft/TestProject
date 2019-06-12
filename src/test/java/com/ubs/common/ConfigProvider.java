@@ -4,17 +4,16 @@ package com.ubs.common;
 import java.io.*;
 import java.util.Properties;
 
-public class ConfigProvider {
+class ConfigProvider {
 
-    Properties configProperties = initProperties();
+    private Properties configProperties = initProperties();
+    private final String URI = getProperty("uri");
 
     public String getURI() {
         return URI;
     }
 
-    final String URI = getProperty("uri");
-
-    Properties initProperties() {
+    private Properties initProperties() {
         if (configProperties == null) {
             configProperties = new Properties();
             File propsFile = new File("C:\\Sources\\TestProject\\src\\test\\resources\\config.properties");
@@ -33,7 +32,7 @@ public class ConfigProvider {
         return configProperties;
     }
 
-    String getProperty(String propertyName) {
+    private String getProperty(String propertyName) {
         return configProperties.getProperty(propertyName);
     }
 }

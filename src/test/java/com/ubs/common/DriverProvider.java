@@ -10,11 +10,11 @@ import java.util.concurrent.TimeUnit;
 
 public class DriverProvider {
 
+    private static final long IMPLICIT_WAIT_STANDARD = 60;
+    private static final long PAGE_LOAD_STANDARD = 90;
     private static WebDriver driver;
-    static final long IMPLICIT_WAIT_STANDARD = 60;
-    static final long PAGE_LOAD_STANDARD = 90;
 
-    private static WebDriver openBrowser() {
+    private static void openBrowser() {
 
 
         WebDriverManager.chromedriver().setup();
@@ -22,7 +22,7 @@ public class DriverProvider {
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments("--disable-dev-shm-usage"
                 , "--no-sandbox"
-                ,"--verbose"
+                , "--verbose"
                 , "--ignore-certificate-errors"
                 , "disable-infobars"
                 , "--disable-web-security"
@@ -32,7 +32,6 @@ public class DriverProvider {
 
         driver.manage().timeouts().implicitlyWait(IMPLICIT_WAIT_STANDARD, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(PAGE_LOAD_STANDARD, TimeUnit.SECONDS);
-        return driver;
     }
 
     public static void closeBrowser() {

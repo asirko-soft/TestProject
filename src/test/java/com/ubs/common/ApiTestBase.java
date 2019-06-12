@@ -4,9 +4,9 @@ import io.restassured.RestAssured;
 
 
 public class ApiTestBase {
-    static ConfigProvider configProvider = new ConfigProvider();
+    private static ConfigProvider configProvider = new ConfigProvider();
 
-    public ApiTestBase() {
+    protected ApiTestBase() {
         RestAssured.baseURI = configProvider.getURI();
     }
 }

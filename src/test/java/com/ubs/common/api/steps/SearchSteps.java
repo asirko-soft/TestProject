@@ -6,17 +6,15 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
-import io.restassured.specification.RequestSpecification;
 import org.hamcrest.Matchers;
 import org.junit.Assert;
 
 import static io.restassured.RestAssured.when;
 
 public class SearchSteps extends ApiTestBase {
+    private final String SEARCH_ENDPOINT = "/bin/ubs/searchservlet";
     private Response response;
     private ValidatableResponse json;
-    private RequestSpecification request;
-    private final String SEARCH_ENDPOINT = "/bin/ubs/searchservlet";
 
     @When("I execute a search query with keyword (.*)")
     public void executeSearchQueryByKeyword(String keyWord) {

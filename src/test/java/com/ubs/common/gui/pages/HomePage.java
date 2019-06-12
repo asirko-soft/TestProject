@@ -22,7 +22,7 @@ public class HomePage extends AbstractPage {
         return driver.findElement(By.id(CBOX_CONTENT));
     }
 
-    public WebElement cBoxIframe() {
+    private WebElement cBoxIframe() {
         driver.switchTo().defaultContent();
         String CBOX_IFRAME = ".cboxIframe";
         return driver.findElement(By.cssSelector(CBOX_IFRAME));
