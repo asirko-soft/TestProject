@@ -1,4 +1,4 @@
-package com.ubs.common.gui;
+package com.ubs.common.api;
 
 import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
@@ -7,9 +7,9 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         monochrome = true
-        , features = {"src/test/java/com/ubs/common/gui/features/"}
+        , features = {"src/test/java/com/ubs/common/api/features/"}
         , tags = {""}
-        , glue = {"com.ubs.common.gui.steps", "com.ubs.common.gui.hooks"}
+        , glue = {"com.ubs.common.api.steps"}
 )
 
 public class CucumberTestRunner {

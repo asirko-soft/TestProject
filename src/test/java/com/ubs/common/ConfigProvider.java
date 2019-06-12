@@ -8,12 +8,14 @@ public class ConfigProvider {
 
     Properties configProperties = initProperties();
 
+    public String getURI() {
+        return URI;
+    }
+
     final String URI = getProperty("uri");
 
-    Properties initProperties()
-    {
-        if (configProperties == null)
-        {
+    Properties initProperties() {
+        if (configProperties == null) {
             configProperties = new Properties();
             File propsFile = new File("C:\\Sources\\TestProject\\src\\test\\resources\\config.properties");
             InputStream stream = null;
@@ -31,8 +33,7 @@ public class ConfigProvider {
         return configProperties;
     }
 
-    String getProperty(String propertyName)
-    {
+    String getProperty(String propertyName) {
         return configProperties.getProperty(propertyName);
     }
 }
